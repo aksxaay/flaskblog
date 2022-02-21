@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    .jumbotron {
+      background-color: #1abc9c; /* Green */
+        color: #ffffff;
+    }
+    </style>
+    <div class="jumbotron" style="color:black">
+    
+    
+            News
+    
+        </h1>
+    
+    </div>
+    
+    
+    <div class="container">
+    
+        {% for new, des, i in context %}
+    
+        <img src="{{i}}" alt="">
+        <h3>News: </h3> {{new}}
+        <h4>Description: </h4> {{des}}
+    
+        {% endfor %}
+    
+    
+    </div>
+{% endblock content %}

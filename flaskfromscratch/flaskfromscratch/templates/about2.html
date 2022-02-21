@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- <title>Know more</title> -->
+	<!-- <link rel="stylesheet" href="css2/style2.css"></link> -->
+	<link rel="stylesheet" href="../static/style2.css"></link>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <!-- title -->
+    {% if title %}
+        <title>StocksHalo - {{ title }}</title>
+    {% else %}
+        <title>StocksHalo</title>
+    {% endif %}
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
+        <div class="container">
+            <a href="" class="navbar-brand text-white font-weight-bold mr-4">
+            STOCKSHALO	
+            </a>
+            
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" class="navbar-toggler"    >
+             <span class="navbar-toggler-icon"></span>
+         </button>
+          <div class="collapse navbar-collapse" id="navbar-menu">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('home') }}">Blog</a>
+                <!-- <a class="nav-item nav-link" href="{{ url_for('stock_list') }}">Stock List</a> -->
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+              </div>
+
+              <!-- Right Side -->
+              <div class="navbar-nav">
+                {% if current_user.is_authenticated %}
+                <!-- <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a> -->
+                <!-- <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a> -->
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              {% endif %}
+
+              </div>
+        </div>
+    </div>
+          
+    </nav>
+
+
+    {% block content %}
+    <div class="wrapper">
+    	<h2>INVEST TO BUILD YOUR FUTURE</h2>
+        <div class="line"></div>
+        <div class="single-service">
+        	<div class="social"><i class="fa fa-star fa-3x text-white" aria-hidden="true"></i></div>
+            <span></span>
+            <h3><font face="Segoe UI">SAVE FOR RETIREMENT</h3>
+            <p><font face="Segoe UI"><font color="gray">As you are working, you should be saving money for retirement. Put your retirement savings into a portfolio of investments, such as stocks, bonds, mutual funds, real estate, businesses, or precious metals. Then, at retirement age, you can live off funds earned from these investments.
+
+             Based on your personal tolerance of risk, you may want to consider being riskier at a younger age with your investments. Greater risk increases your chances of earning greater wealth. Becoming more conservative with your investments as you grow older can be wise, especially as you near retirement age.
+</p>
+        </div>
+        <div class="single-service">
+            <div class="social"><i class="fa fa-pie-chart" aria-hidden="true"></i></div>
+            <span></span>
+            <h3><font face="Segoe UI">DIVERSIFICATION</h3>
+            <p><font face="Segoe UI"><font color="gray">Diversification is a core mantra of investing. In the share market, there are different types of assets like debt securities, common stock, preference shares, large-cap stocks, mid-cap stocks and small-cap stocks among others where you can invest.You can invest in a range of securities to diversify your risk. So, in case returns from one goes down, the other can balance it out. However, it’s important not to overdiversify as it will not all any real value to your investment.</p>
+        </div>
+
+        <div class="single-service">
+            <div class="social"><i class="fa fa-usd" aria-hidden="true"></i></i></div>
+            <span></span>
+            <h3><font face="Segoe UI">BEAT INFLATION</h3>
+            <p><font face="Segoe UI"><font color="gray">Inflation is the general rise in the price levels in an economy with time. It eats into the value of your investments and the purchasing power of your money. A food item costing Rs. 100 today may cost Rs. 120 next year.The returns from bank FDs or PPF can hardly beat the effects of inflation. Hence, they cannot effectively combat the effect of inflation. The returns from share market are relatively higher, should you remain invested for the long haul, and help you counter inflation.
+</p>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

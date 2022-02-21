@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+     -->
+    
+
+
+  
+        <h2>Crypto List</h2>
+
+        <form method="GET">
+            <select name="filter">
+                <option value="">All Crypto</option>
+                <option value="new_intraday_highs">New Intraday Highs</option>
+                <option value="new_closing_highs">New Closing Highs</option>
+                <option value="new_intraday_lows">New Intraday Highs</option>
+                <option value="new_closing_lows">New Closing Lows</option>
+            </select>
+            <input type="submit" value="Search"/>
+        </form>
+
+
+
+        <table class="table table-striped table-hover ui selectable striped table">
+            <thead class="thead-light">
+              <tr>
+                <th>ID</th>
+                <th>Symbol</th>
+                <th class="right aligned">Name</th>
+                <th class="right aligned">Currency</th>
+                <th class="right aligned">Exchange</th>
+                <th class="right aligned">Country</th>
+                <th class="right aligned">Type</th>
+              </tr>
+            </thead>
+    
+    
+            <tbody>
+              <!-- <tr>
+                <td>John</td>
+                <td>Approved</td>
+                <td class="right aligned">None</td>
+              </tr> -->
+    
+            {% for crypto in cryptos.items %}
+            <tr>
+                <td>{{ crypto.id }}</td>
+                <td>{{ crypto.symbol }}</td>
+                <td class="right aligned"> <a href="{{ url_for('crypto_detail', crypto_symbol=crypto.symbol) }}">{{ crypto.name }}</a> </td>
+                <td>{{ crypto.currency }}</td>
+                <td>{{ crypto.exchange }}</td>
+                <td>{{ crypto.country }}</td>
+                <td>{{ crypto.Type }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+            
+
+
+
+
+    {% for page_num in cryptos.iter_pages() %}
+      {% if page_num %}
+        {% if cryptos.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('crypto_list', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('crypto_list', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        ...
+      {% endif %}
+
+
+            {% endfor %}
+
+
+      
+              
+            </tbody>
+          </table>
+    
+
+
+
+
+{% endblock content %}

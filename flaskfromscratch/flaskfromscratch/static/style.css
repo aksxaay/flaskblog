@@ -1,0 +1,118 @@
+
+
+.bgimg{
+	/* background-image: url('../images/stocksimg.png'); */
+	/* display: flex;
+  align-items: center;
+  justify-content: center; */
+	background-image: url('../static/images/stocksimg.png');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	
+	
+	width: 100%;
+	height: 550px;
+	
+}
+.hearderset{
+	padding-top: 90px;
+	padding-left: 50px;
+	padding-right: 50px;
+	
+	box-sizing: border-box;
+}
+
+.hearderset h2{
+      font-size: 55px;
+     padding-left: 50px;
+	padding-right: 50px;
+	
+}
+.hearderset h1{
+	font-size: 100px
+	font-weight:bold;
+}
+
+/*
+..........................ouressence............*/
+.ouressence{
+	padding: 60px 0px 60px 10px;
+	height: 550px;
+}
+
+.ouressence h1{
+	font: 50px;
+	font-weight: bold;
+}
+
+
+.rowsetting h2{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+.rowsetting{
+ margin: 80px 0px !important;
+ color: black;
+}
+
+.rowsetting p{
+	padding-top: 30px;
+	color: gray;
+
+}
+
+
+ .imgsetting{
+   border-radius:50%;
+   height:100px;
+   width:100px;
+ }
+
+
+ .fa-money{
+    margin-top: 28px;
+    
+ }
+
+
+ .fa-line-chart{
+    margin-top: 28px;
+    
+ }
+
+
+ .fa-star{
+    margin-top: 28px;
+    
+ }
+
+.clients{
+	height: 700px;
+	padding-left: 100px 0px 60px;
+	padding-top: 30px;
+	width: 100%;
+}
+
+.clients h1{
+font-size: 50px;
+font-weight: bold;
+}
+
+.clients h4{
+ margin-top: 15px;
+    font-weight: bold;
+    font-size: 30px;	
+}
+
+.clientsetting{
+	margin-top: 60px !important
+}
+.footer{
+height: 50px;
+}
+.footer h6{
+	line-height: 50px;
+}

@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+				<title>StocksHalo</title>
+				<link rel="stylesheet" type="text/css" href="../static/style.css">
+				<link rel="stylesheet" type="text/css" href="../static/all.css">
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+			<!-- jQuery library -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+			<!-- Latest compiled JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>	
+
+			<!-- Popper JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			
+</head>
+<body>
+	<div class="bgimg">
+		<nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
+			<div class="container">
+				<a href="" class="navbar-brand text-white font-weight-bold mr-4">
+				STOCKSHALO	
+				</a>
+				
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" class="navbar-toggler"    >
+             	<span class="navbar-toggler-icon"></span>
+             </button>
+              <div class="collapse navbar-collapse" id="navbar-menu">
+				<div class="navbar-nav mr-auto">
+					<a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+					<a class="nav-item nav-link" href="{{ url_for('home') }}">Blog</a>
+					<!-- <a class="nav-item nav-link" href="{{ url_for('stock_list') }}">Stock List</a> -->
+
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Markets
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						  <a class="dropdown-item" href="{{ url_for('stock_list') }}">Stocks</a>
+						  <a class="dropdown-item" href="{{ url_for('stock_list') }}">Crypto</a>
+						  
+						</div>
+					  </div>
+
+					  <a class="nav-item nav-link" href="{{ url_for('news') }}">News</a>
+					</div>
+
+
+
+					<a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+				  </div>
+
+				  <!-- Right Side -->
+				  <div class="navbar-nav">
+					{% if current_user.is_authenticated %}
+					<!-- <a class="nav-item nav-link" href="{{ url_for('new_post') }}">New Post</a> -->
+					<!-- <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a> -->
+					<a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+				  {% else %}
+					<a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+					<a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+				  {% endif %}
+	
+				  </div>
+            </div>
+		</div>
+              
+		</nav>
+
+<div class="container text-center hearderset">
+  <h2 style="color: gray">Start Trading Now</h2>
+  <h1 style="color: gray">Finance Your Future</h1>
+  <button class="btn btn-warning text-gray-dark btn-light">KNOW MORE</button> <!-- we redirect to about page (which has details of website with gyaan on why to trade) -->
+</div>
+</div>
+
+<section class="container ouressence text-center">
+       <h1> THE ESSENCE </h1>
+       <p> Let Us Begin</p>
+
+       <div class="row rowsetting">
+       	<div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+       		<div class="imgsetting d-block m-auto bg-primary">
+       		<i class="fa fa-money fa-3x text-white" aria-hidden="true"></i></div>
+       		<h2>Virtual Currency</h2>
+       		<p>Our Virtual Currency enables the users to experiment without actual monetary losses.</p>
+       		</div>
+
+       		<div class="col-lg-4 col-md-4 col-10 d-block m-auto ">
+       		<div class="imgsetting d-block m-auto bg-primary">
+       		<i class="fa fa-line-chart fa-3x text-white" aria-hidden="true"></i></div>
+       		<h2>Real Experience</h2>
+       		<p>Watch the market,develop your skills and make intelligent predictions just like real life trading. </p>
+       		</div>
+
+       		<div class="col-lg-4 col-md-4 col-10 d-block m-auto">
+       		<div class="imgsetting d-block m-auto bg-primary">
+       		<i class="fa fa-star fa-3x text-white" aria-hidden="true"></i></div>
+       		<h2>Stay Up to Date</h2>
+       		<p>Want to expand your knowledge in the field of stocks? We got you covered!</p>
+       		</div>
+
+       	</div>
+       </div>
+</section>
+
+<section class="clients bg-light">
+	<div class="container text-center">
+	<h1>User Testimonials</h1>
+	<p>Our Happy Clients.</p>
+	<div class="row clientsetting">
+		<div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto">
+			<figure class="figure">
+				<img src="../static/images/chinesenew.jpg"    class="figure-img img-fluid rounded-circle" height="250px"width="250px">
+				<figcaption>
+					<h4>Kay Sharkey</h4>
+					<p class="figure-caption">"StocksHalo helped me learn how to invest smart.I started  making money from stock trading and could pay off my students' loan in just 40 months"</p>
+				</figcaption>
+			</figure>
+			
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto">
+			<figure class="figure">
+				<img src="../static/images/indian.jpg"    class="figure-img img-fluid rounded-circle" height="250px"width="250px">
+				<figcaption>
+					<h4>P Sundaram</h4>
+					<p class="figure-caption">"As a beginner I always feared investing in stocks, but StocksHalo helped me undertsand the market better without being subjected to any real money loss pressure"</p>
+				</figcaption>
+			</figure>
+			
+		</div>
+
+         <div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto">
+			<figure class="figure">
+				<img src="../static/images/afric.jpg"    class="figure-img img-fluid rounded-circle" height="250px"width="250px">
+				<figcaption>
+					<h4>Oluwami Jide</h4>
+					<p class="figure-caption">"StocksHalo enabled me to start my career as a stock broker at the age of 45. StockHalo played a big role in creating market awareness in me"</p>
+				</figcaption>
+			</figure>
+			
+		</div>
+
+
+
+	</div>
+	</div>
+</section>
+<footer class>
+	<h6 class="text-center">Copyright 2020, Design by TeamStockHalo</h6>
+</footer>
+</body>
+
+</html>
